@@ -1,13 +1,14 @@
 import ExpenseItem from "./ExpenseItem";
+import Card from "./Card";
 import "./ExpenseList.css";
 
 function ExpenseList(props) {
   return (
-    <div className="expenses">
+    <Card className="expenses">
       {props.expenseArray.map((expense) => (
         <ExpenseItem key={expense.id} expense={expense} />
       ))}
-    </div>
+    </Card>
   );
 }
 
