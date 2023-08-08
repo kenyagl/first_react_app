@@ -1,5 +1,5 @@
-import ExpenseList from "./components/ExpenseList";
-function App() {
+import ExpenseList from "./components/Expenses/ExpenseList";
+const App = () => {
   const expenses = [
     {
       id: "e1",

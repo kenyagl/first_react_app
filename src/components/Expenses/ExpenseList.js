@@ -1,8 +1,8 @@
 import ExpenseItem from "./ExpenseItem";
-import Card from "./Card";
+import Card from "../UI/Card";
 import "./ExpenseList.css";
 
-function ExpenseList(props) {
+const ExpenseList = (props) => {
   return (
     <Card className="expenses">
       {props.expenseArray.map((expense) => (
