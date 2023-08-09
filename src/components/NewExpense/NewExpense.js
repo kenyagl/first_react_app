@@ -3,18 +3,14 @@ import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
 
 const NewExpense = (props) => {
-  const [writingForm, setWritingForm] = useState(false);
-
-  // const isFormOpenHandler = (clickedCancelOrSubmit) => {
-  //   setWritingForm(clickedCancelOrSubmit);
-  // };
+  const [isWritingForm, setIsWritingForm] = useState(false);
 
   const closeForm = () => {
-    setWritingForm(false);
+    setIsWritingForm(false);
   }
 
   const openForm = () => {
-    setWritingForm(true);
+    setIsWritingForm(true);
   }
 
   const saveExpenseDataHandler = (enteredExpenseData) => {
@@ -24,18 +20,18 @@ const NewExpense = (props) => {
     };
 
     props.onAddExpense(expenseData);
-    closeForm();
+    setIsWritingForm(false);
   };
 
   return (
     <div className="new-expense">
-      {writingForm ? (
+      {isWritingForm ? (
         <ExpenseForm
           onSaveExpenseData={saveExpenseDataHandler}
           onClickCancel={closeForm}
         />
       ) : (
-        <button onClick={openForm}>Add Expense</button>
+        <button onClick={openForm}>Add New Expense</button>
       )}
     </div>
   );
