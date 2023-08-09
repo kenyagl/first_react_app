@@ -5,7 +5,8 @@ import ExpensesList from "./ExpensesList";
 import "./Expenses.css";
 
 const Expenses = (props) => {
-  const [filteredYear, setFilteredYear] = useState("2020");
+  const [filteredYear, setFilteredYear] = useState("2023");
+
 
   const selectYearHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
@@ -14,8 +15,6 @@ const Expenses = (props) => {
   const filteredExpenses = props.expenseArray.filter(
     (expense) => expense.date.getFullYear() === parseInt(filteredYear)
   );
-
-  
 
   return (
     <div>
